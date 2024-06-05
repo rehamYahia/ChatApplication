@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "802583170401",
+    "project_id": "chat-app-f880b",
+    "storage_bucket": "chat-app-f880b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:802583170401:android:95fed5173d626acff6c920",
+        "android_client_info": {
+          "package_name": "com.task.chatapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCw2OwzQEmncfE8w22Ty9wC0d7w6d-MFS4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
