@@ -2,6 +2,11 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.googleGmsGoogleServices)
+    id ("kotlin-kapt")//Room
+    id ("dagger.hilt.android.plugin")   //dagger_hilt
+    id ("com.google.dagger.hilt.android")
+    id("com.google.firebase.crashlytics")
+
 }
 
 android {
@@ -76,4 +81,40 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore-ktx")
     implementation("com.google.firebase:firebase-functions-ktx")
     implementation("com.google.firebase:firebase-auth-ktx")
+
+
+    //Splash Api
+    implementation ("androidx.core:core-splashscreen:1.0.1")
+
+
+    //Compose Navigation
+    val nav_version = "2.7.6"
+    implementation ("androidx.navigation:navigation-compose:$nav_version")
+
+    //Dagger Hilt
+    implementation ("com.google.dagger:hilt-android:2.48")
+    kapt ("com.google.dagger:hilt-android-compiler:2.48")
+    kapt ("androidx.hilt:hilt-compiler:1.1.0")
+    implementation ("androidx.hilt:hilt-navigation-compose:1.1.0")
+    implementation ("androidx.activity:activity-ktx:1.8.1")
+
+
+    //Coil
+    implementation("io.coil-kt:coil-compose:2.4.0")
+
+    //Accompanist
+    implementation ("com.google.accompanist:accompanist-systemuicontroller:0.32.0")
+
+    //Room
+    val room_version = "2.6.1"
+    implementation ("androidx.room:room-runtime:$room_version")
+    kapt ("androidx.room:room-compiler:$room_version")
+    implementation ("androidx.room:room-ktx:2.6.1")
+
+    //datastore
+    implementation ("androidx.datastore:datastore-preferences:1.0.0")
+
+    //observe as state
+    implementation ("androidx.compose.runtime:runtime-livedata:1.6.0")
+
 }
