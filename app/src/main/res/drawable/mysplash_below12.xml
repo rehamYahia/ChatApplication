@@ -3,16 +3,13 @@
     <item android:drawable="@color/primart_color"/>
 
     <item
-        android:height="50dp"
-        android:width="100dp"
+        android:height="100dp"
+        android:width="200dp"
         android:drawable="@drawable/ttalky"
         android:gravity="center"
         >
 
 
 
-
-
     </item>
-
 </layer-list>

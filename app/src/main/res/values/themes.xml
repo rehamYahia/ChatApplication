@@ -3,7 +3,7 @@
 
     <style name="Theme.ChatApp" parent="android:Theme.Material.Light.NoActionBar" >
 
-        <item name="android:statusBarColor">@color/primart_color</item>
+        <item name="android:statusBarColor">@color/purple_200</item>
 
 
 
@@ -24,7 +24,7 @@
         <item name="android:windowNoTitle">true</item>
         <item name="android:colorPrimary">@color/primart_color</item>
         <item name="android:colorPrimaryDark">@color/primart_color</item>
-        <item name="android:windowBackground">@drawable/mysplash</item>
+        <item name="android:windowBackground">@drawable/mysplash_below12</item>
 
 
 

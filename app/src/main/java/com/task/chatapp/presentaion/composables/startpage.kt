@@ -36,8 +36,9 @@ fun StartPage(event:(on_obordingevent)->Unit){
         Spacer(modifier = Modifier.height(30.dp))
 
         Image(painter = painterResource(id = R.drawable.talktimage), modifier = Modifier
-            .fillMaxWidth(0.70f)
-            .height(221.dp) ,contentDescription ="" , contentScale = ContentScale.Crop)
+            .padding(horizontal = 20.dp)
+            .fillMaxWidth()
+             ,contentDescription ="" , contentScale = ContentScale.Crop)
         Spacer(modifier = Modifier.height(50.dp))
         Text(text = "Stay connected ", modifier = Modifier.padding(end = 20.dp) ,fontSize = 28.sp, fontFamily = poppins_bold)
         Text(text = "with your friends ", modifier = Modifier.padding(end = 11.dp) ,fontSize = 28.sp, fontFamily = poppins_bold)
