@@ -36,6 +36,8 @@ class startviewmodel@Inject constructor(
                 startdistination = Constants.onbording
             }
 
+            delay(Duration.ofSeconds(3))
+
 
             delay(Duration.ofSeconds(3))
             splashcondition=false
