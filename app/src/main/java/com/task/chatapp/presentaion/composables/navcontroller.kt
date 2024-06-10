@@ -20,7 +20,8 @@ fun Mynaviation(startdistination:String) {
             StartPage(event = model::myevent)
         }
         composable(route = Constants.sartscreen) {
-            HomeScreen()
+
+            PhoneNumberLogin()
         }
 
     }

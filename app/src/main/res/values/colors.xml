@@ -8,5 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="primart_color">#377DFF</color>
+    <color name="light_grey">#F7FBFD</color>
+
 
 </resources>
