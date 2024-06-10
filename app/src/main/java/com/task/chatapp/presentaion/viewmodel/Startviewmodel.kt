@@ -37,6 +37,7 @@ class startviewmodel@Inject constructor(
             }
 
 
+            delay(Duration.ofSeconds(3))
             splashcondition=false
 
 
