@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="App.Starting.Theme" parent="Theme.SplashScreen">
+
+        <item name="windowSplashScreenBackground">@color/primart_color</item>
+
+        <item name="windowSplashScreenAnimatedIcon">@drawable/mysplash</item>
+
+        <item name="postSplashScreenTheme">@style/Theme.ChatApp</item>
+
+    </style>
+
+
+</resources>
