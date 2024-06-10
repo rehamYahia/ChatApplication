@@ -35,12 +35,18 @@ class MainActivity : ComponentActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        WindowCompat.setDecorFitsSystemWindows(window,false)
-        installSplashScreen().apply {
-            setKeepOnScreenCondition{
-                viewmodel.splashcondition
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            installSplashScreen().apply {
+                setKeepOnScreenCondition { viewmodel.splashcondition}
             }
         }
+
+        else{
+            installSplashScreen().apply {
+                setKeepOnScreenCondition { viewmodel.splashcondition }
+            }
+        }
+
         setContent {
             ChatAppTheme {
                 // A surface container using the 'background' color from the theme
@@ -57,32 +63,6 @@ class MainActivity : ComponentActivity() {
     }
 
 
-    private fun insialsplashscreen() {
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
-            // For Android 12 and higher, use the SplashScreen API
-            WindowCompat.setDecorFitsSystemWindows(window,false)
-            installSplashScreen().apply {
-                setKeepOnScreenCondition{
-                    viewmodel.splashcondition
-                }
-            }
-            splashScreen.setOnExitAnimationListener { splashscreenview ->
-                val slideup = ObjectAnimator.ofFloat(
-                    splashscreenview,
-                    View.TRANSLATION_Y,
-                    -splashscreenview.height.toFloat()
-                )
-                slideup.interpolator = AnticipateInterpolator()
-                slideup.duration = 1000L
-                slideup.doOnEnd {
-                    splashscreenview.remove()
-                }
-                slideup.start()
-            }
 
-        } else {
-            setTheme(R.style.Theme_ChatApp)
-        }
-    }
 }
 
