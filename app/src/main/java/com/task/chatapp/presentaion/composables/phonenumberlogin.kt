@@ -38,23 +38,28 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
 import com.task.chatapp.R
 import com.task.chatapp.data.saveentry.on_obordingevent
+import com.task.chatapp.data.saveentry.on_userevent
 import com.task.chatapp.presentaion.viewmodel.phonenumberviewmodel
 import com.task.chatapp.ui.theme.poppins_bold
 import com.task.chatapp.ui.theme.poppins_regular
+import com.task.chatapp.utilis.Constants
 import dagger.hilt.android.lifecycle.HiltViewModel
 
 @Composable
-fun PhoneNumberLogin(vmodel:phonenumberviewmodel= hiltViewModel()){
+fun PhoneNumberLogin(vmodel:phonenumberviewmodel= hiltViewModel(),event:(on_userevent)->Unit,navController: NavController){
 
 
-    PhoneNumberBody(ontext = vmodel::text)
+    PhoneNumberBody(ontext = vmodel::text,event = event){
+        navController.navigate(Constants.verificationpage)
+    }
 }
 
 
 @Composable
-fun PhoneNumberBody(ontext: (String) -> Unit){
+fun PhoneNumberBody(ontext: (String) -> Unit,event:(on_userevent)->Unit,onclick:()->Unit){
     Column(modifier = Modifier.padding(top = 60.dp)) {
         Text(text = "Enter your phone number", modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,fontFamily = poppins_bold,fontSize = 20.sp)
 
@@ -90,7 +95,9 @@ fun PhoneNumberBody(ontext: (String) -> Unit){
 
         Spacer(modifier = Modifier.height(50.dp))
 
-        Button(onClick ={} , modifier = Modifier.fillMaxWidth(0.7f).height(50.dp).align(Alignment.CenterHorizontally), shape = RoundedCornerShape(7.dp),colors = ButtonDefaults.buttonColors(containerColor = colorResource(
+        Button(onClick ={event(on_userevent.saveuserentry)
+            onclick()
+                        } , modifier = Modifier.fillMaxWidth(0.7f).height(50.dp).align(Alignment.CenterHorizontally), shape = RoundedCornerShape(7.dp),colors = ButtonDefaults.buttonColors(containerColor = colorResource(
             id = R.color.primart_color
         ), contentColor = Color.White)) {
 

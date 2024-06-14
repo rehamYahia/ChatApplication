@@ -18,6 +18,7 @@ class onbording_viwmodel @Inject constructor(
             is on_obordingevent.saveappentry -> {
                 saveappentry()
             }
+
         }
     }
 
@@ -27,5 +28,8 @@ class onbording_viwmodel @Inject constructor(
         }
 
     }
+
+
+
 
 }

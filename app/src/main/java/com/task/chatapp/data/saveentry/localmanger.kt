@@ -7,4 +7,7 @@ import kotlinx.coroutines.flow.Flow
         suspend fun saveentry()
 
         fun readentry(): Flow<Boolean>
+
+
+
     }

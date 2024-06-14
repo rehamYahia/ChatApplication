@@ -6,43 +6,36 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.preferencesDataStore
-import com.task.chatapp.utilis.Constants.PREF_NAME
-import com.task.chatapp.utilis.Constants.key
-import com.task.chatapp.utilis.Constants.key2
-
+import com.task.chatapp.utilis.Constants
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-class localmanager(
+class userlocalmanger(
     private val context: Context
-):localmanger {
-    override suspend fun saveentry() {
+):userlocalmangerinter {
+    override suspend fun saveuserentry() {
         context.datastore.edit {
                 setting->
-            setting[prefrenceskeys.app_key]=true
+            setting[prefrenceskeys2.user_key]=true
         }
 
     }
 
-
-
-    override  fun readentry(): Flow<Boolean> {
+    override  fun readUserentry(): Flow<Boolean> {
         return context.datastore.data.map {
                 pref->
-            pref[prefrenceskeys.app_key]?:false
+            pref[prefrenceskeys2.user_key]?:false
         }
     }
-
-
-
 
 
 }
-private val Context.datastore : DataStore<Preferences> by preferencesDataStore(name =PREF_NAME )
 
-private object prefrenceskeys{
-    val app_key= booleanPreferencesKey(name = key)
+private val Context.datastore : DataStore<Preferences> by preferencesDataStore(name = Constants.pref_name2 )
 
+private object prefrenceskeys2{
+
+    val user_key= booleanPreferencesKey(name = Constants.key2)
 
 
 

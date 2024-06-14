@@ -5,7 +5,9 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.task.chatapp.data.saveentry.on_userevent
 import com.task.chatapp.presentaion.viewmodel.onbording_viwmodel
+import com.task.chatapp.presentaion.viewmodel.userviewmodel
 import com.task.chatapp.utilis.Constants
 
 @Composable
@@ -20,8 +22,11 @@ fun Mynaviation(startdistination:String) {
             StartPage(event = model::myevent)
         }
         composable(route = Constants.sartscreen) {
-
-            PhoneNumberLogin()
+            val usermodel: userviewmodel = hiltViewModel()
+            PhoneNumberLogin(event = usermodel::myevent, navController = navController)
+        }
+        composable(route = Constants.verificationpage) {
+            VerificationCode()
         }
 
     }
