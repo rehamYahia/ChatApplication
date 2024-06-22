@@ -6,6 +6,7 @@ plugins {
     id ("dagger.hilt.android.plugin")   //dagger_hilt
     id ("com.google.dagger.hilt.android")
     id("com.google.firebase.crashlytics")
+    id("kotlin-parcelize")
 
 }
 
@@ -97,6 +98,10 @@ dependencies {
     kapt ("androidx.hilt:hilt-compiler:1.1.0")
     implementation ("androidx.hilt:hilt-navigation-compose:1.1.0")
     implementation ("androidx.activity:activity-ktx:1.8.1")
+
+
+    //recaptcha
+    implementation("com.google.android.gms:play-services-safetynet:18.0.1")
 
 
     //Coil

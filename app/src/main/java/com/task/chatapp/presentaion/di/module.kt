@@ -11,6 +11,8 @@ import com.task.chatapp.data.saveentry.saveentry
 import com.task.chatapp.data.saveentry.saveuserentry
 import com.task.chatapp.data.saveentry.userlocalmanger
 import com.task.chatapp.data.saveentry.userlocalmangerinter
+import com.task.chatapp.domain.repositories.login.LoginWithPhone
+import com.task.chatapp.presentaion.viewmodel.phonenumberviewmodel
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -46,4 +48,7 @@ object module {
             readUserentry(userlocalmanager)
         )
     }
+
+
+
 }

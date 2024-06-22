@@ -23,6 +23,7 @@ import androidx.core.view.WindowCompat
 import com.google.firebase.FirebaseApp
 import com.task.chatapp.presentaion.composables.Mynaviation
 import com.task.chatapp.presentaion.composables.StartPage
+import com.task.chatapp.presentaion.viewmodel.phonenumberviewmodel
 import com.task.chatapp.presentaion.viewmodel.startviewmodel
 import com.task.chatapp.ui.theme.ChatAppTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -31,10 +32,12 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     val viewmodel by viewModels<startviewmodel>()
+
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             installSplashScreen().apply {
                 setKeepOnScreenCondition { viewmodel.splashcondition}
